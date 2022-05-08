@@ -7,54 +7,54 @@ class Connection:
 
 # Sets connections for the different environments
 class Connections:
-    SBX1 = Connection(
+    ENV1 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
-    SLS1 = Connection(
+    ENV2 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
-    SLS2 = Connection(
+    ENV3 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
-    STG1 = Connection(
+    ENV4 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
-    STG3 = Connection(
+    ENV5 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
-    QA10 = Connection(
+    ENV6 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
-    QA5 = Connection(
+    ENV7 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
-    QA5.core_services_url = "<url>"
-    PRD1 = Connection(
+    ENV7.core_services_url = "<url>"
+    ENV8 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
-    PRD3 = Connection(
+    ENV9 = Connection(
         "env",
         "<endpoint>",
         "<system_id>")
 
     all_connections = []
-    all_connections.append(SBX1)
-    all_connections.append(SLS1)
-    all_connections.append(SLS2)
-    all_connections.append(STG1)
-    all_connections.append(STG3)
-    all_connections.append(PRD1)
-    all_connections.append(PRD3)
-    all_connections.append(QA10)
-    all_connections.append(QA5)
+    all_connections.append(ENV1)
+    all_connections.append(ENV2)
+    all_connections.append(ENV3)
+    all_connections.append(ENV4)
+    all_connections.append(ENV5)
+    all_connections.append(ENV6)
+    all_connections.append(ENV7)
+    all_connections.append(ENV8)
+    all_connections.append(ENV9)
 
     # Sets connection based off of env variable in main.py
     def get_connection(self, channel):
@@ -65,6 +65,6 @@ class Connections:
 
         if len(matched_connection) == 0:
             raise ValueError(
-                "Please provide the valid Env (PRD1/PRD3/SBX1/SLS1/SLS2/STG1/STG3/QA)")
+                "Please provide the valid Env (ENV1/ENV2/ENV3/ENV4/ENV5/ENV6/ENV7/ENV8/ENV9)")
 
         return matched_connection[0]
